@@ -1,39 +1,41 @@
+import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { Ionicons } from '@expo/vector-icons';
+
+//Paleta de cores do projeto
+const cores = {
+  verde: '#108245', 
+  verdeEscuro: '#0c6b38',
+  cinzaClaro: '#8a93a1',
+  cinzaEscuro: '#5b6472',
+  preto: '#161a20',
+  bgBrancoGelo: '#f6f8fa',
+  branco: '#ffffff',
+};
 
 export default function HomeScreen() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.titulo}>Bem-vindo moreno</Text>
-      <Text style={styles.subtitulo}>Este é o seu aplicativo React Native!</Text>
-      <Text style={styles.corpo}>
-        O Lorem Ipsum é um texto modelo da indústria tipográfica 
-        e de impressão. O Lorem Ipsum tem vindo a ser o texto padrão usado por estas indústrias
-        desde o ano de 1500, quando uma misturou os caracteres de um texto para criar 
-        um espécime de livro. Este texto não só sobreviveu 5 séculos, 
-        mas também o salto para a tipografia electrónica, 
-        mantendo-se essencialmente inalterada. Foi popularizada nos anos 60 com a 
-        disponibilização das folhas de Letraset, que continham passagens com 
-        Lorem Ipsum, e mais recentemente com os programas de publicação 
-        como o Aldus PageMaker que incluem versões do Lorem Ipsum. 
-      </Text>
-      <TouchableOpacity style={{
-        backgroundColor: 'black',
-        padding: 10,
-        height: 'auto',
-        borderRadius: 20,
-        marginTop: 20,
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}
-      onPress={() => alert('Ai meu pézinho eduardo')}>
-        <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>
-          Clique aqui pra uma
+        <SafeAreaView style={styles.container}>
+          <View style={styles.logo}>
+            <Text style={styles.logoText}>
+              BC
+            </Text>
+          </View>
+        <Text style={styles.titulo}>Falaa Buraco!!!</Text>
+        <Text style={styles.subtitulo}>Reporte, acompanhe e confirme a correção dos buracos na sua cidade.</Text>
+        <TouchableOpacity activeOpacity={0.8} style={styles.botao}>
+          <Text style={styles.textoBotao}>
+             <Ionicons name="logo-google" size={20} color="white" />   Login com o Google
+          </Text>
+        </TouchableOpacity>
+        <Text style={styles.rodape}>
+          Ao continuar, você concorda com os Termos de Serviço e Política de Privacidade (LGPD).
         </Text>
-      </TouchableOpacity>
-      <Text style={{ color: '#f5f5f5', fontSize: 15, textAlign: 'center', marginVertical: 100}}>
-        Cuidado
-      </Text>
-    </View>
+        <Text style={styles.mapaSemLogin}>
+          Ver mapa sem login {'>'}
+        </Text>
+        </SafeAreaView>
   );
 }
 
@@ -42,24 +44,73 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#3fa103',
+    backgroundColor: cores.bgBrancoGelo,
   },
+
+  logo: {
+    width: 100,
+    height: 100,
+    borderRadius: 30,
+    backgroundColor: cores.verde,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  logoText: {
+    color: 'white',
+    fontSize: 40,
+    fontWeight: '900',
+  },
+
   titulo: {
-    color: '#ffffff',
-    fontSize: 28,
+    color: cores.preto,
+    fontSize: 26,
     fontWeight: 'bold',
     textAlign: 'center',
+    margin: 25,
   },
+
   subtitulo: {
-    color: '#f5f5f5',
-    fontSize: 20,
+    color: cores.cinzaClaro,
+    fontSize: 18,
     textAlign: 'center',
+    marginHorizontal: 40,
   },
-  corpo: {
-    color: '#f5f5f5',
+
+  botao: {
+    backgroundColor: cores.verde,
+    marginTop: 30,
+    padding: 20,
+    height: 'auto',
+    borderRadius: 15,
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'center',
+  },
+
+  textoBotao: {
+    color: 'white',
+    fontSize: 18, 
+    fontWeight: 'bold',
+
+  },
+
+  rodape: {
+    color: cores.cinzaEscuro,
+    fontSize: 15,
+    fontWeight: '400',
+    textAlign: 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginHorizontal: 40,
+    marginTop: 20,
+  },
+  
+  mapaSemLogin: {
+    color: cores.verdeEscuro,
     fontSize: 15,
     textAlign: 'center',
-    marginVertical: 30,
-    marginHorizontal: 20,
+    marginTop: 20,
+    fontWeight: 'bold',
   },
 });
