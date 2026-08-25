@@ -1,7 +1,8 @@
+import GoogleLogo from '@/components/google_logo';
+import { Link } from "expo-router";
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Ionicons } from '@expo/vector-icons';
 
 //Paleta de cores do projeto
 const cores = {
@@ -25,16 +26,23 @@ export default function HomeScreen() {
         <Text style={styles.titulo}>Falaa Buraco!!!</Text>
         <Text style={styles.subtitulo}>Reporte, acompanhe e confirme a correção dos buracos na sua cidade.</Text>
         <TouchableOpacity activeOpacity={0.8} style={styles.botao}>
+          <View style={styles.googleIconCircle}>
+            <GoogleLogo size={20} />
+          </View>
           <Text style={styles.textoBotao}>
-             <Ionicons name="logo-google" size={20} color="white" />   Login com o Google
+            Login com o Google
           </Text>
         </TouchableOpacity>
         <Text style={styles.rodape}>
           Ao continuar, você concorda com os Termos de Serviço e Política de Privacidade (LGPD).
         </Text>
-        <Text style={styles.mapaSemLogin}>
-          Ver mapa sem login {'>'}
-        </Text>
+        <Link href="/mapa" asChild>
+          <TouchableOpacity activeOpacity={0.8}>
+            <Text style={styles.mapaSemLogin}>
+              Ver mapa sem login {'>'}
+            </Text>
+          </TouchableOpacity>
+        </Link>
         </SafeAreaView>
   );
 }
@@ -83,9 +91,9 @@ const styles = StyleSheet.create({
     padding: 20,
     height: 'auto',
     borderRadius: 15,
+    flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    alignSelf: 'center',
   },
 
   textoBotao: {
@@ -112,5 +120,14 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginTop: 20,
     fontWeight: 'bold',
+  },
+  googleIconCircle: {
+    width: 32,
+    height: 32,
+    borderRadius: 16,
+    backgroundColor: cores.branco,
+    alignItems: "center",
+    justifyContent: "center",
+    marginRight: 10,
   },
 });

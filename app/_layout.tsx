@@ -6,7 +6,9 @@ import 'react-native-reanimated';
 import { useColorScheme } from '@/hooks/use-color-scheme';
 
 export const unstable_settings = {
-  anchor: '(tabs)',
+  //anchor: '(tabs)',
+  //anchor: '(login)',
+  //initialRouteName: '(tabs)',
 };
 
 export default function RootLayout() {
@@ -14,9 +16,11 @@ export default function RootLayout() {
 
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
+      <Stack initialRouteName="(tabs)" screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="login" options={{ headerShown: true, title: 'Faça login com Google' }} />
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
+        <Stack.Screen name="mapa" options={{ headerShown: true, title: 'Mapa dos buracos' }} />
       </Stack>
       <StatusBar style="auto" />
     </ThemeProvider>
