@@ -1,5 +1,4 @@
-import {Redirect} from "expo-router";
-import {Text} from "react-native";
+import { Text } from "react-native";
 
 export default function Mapa({ logado = false }: { logado?: boolean }) {
   return (
