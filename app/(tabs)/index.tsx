@@ -1,5 +1,5 @@
 import GoogleLogo from '@/components/google_logo';
-import { Link } from "expo-router";
+import { Link, router } from "expo-router";
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -16,6 +16,13 @@ const cores = {
 };
 
 export default function HomeScreen() {
+const loginGoogle = () => {
+  router.push({
+    pathname: '/mapa',
+    params: { logado: "true" },
+  });
+};
+
   return (
         <SafeAreaView style={styles.container}>
           <View style={styles.logo}>
@@ -25,7 +32,7 @@ export default function HomeScreen() {
           </View>
         <Text style={styles.titulo}>Falaa Buraco!!!</Text>
         <Text style={styles.subtitulo}>Reporte, acompanhe e confirme a correção dos buracos na sua cidade.</Text>
-        <TouchableOpacity activeOpacity={0.8} style={styles.botao}>
+        <TouchableOpacity activeOpacity={0.8} style={styles.botao} onPress={loginGoogle}>
           <View style={styles.googleIconCircle}>
             <GoogleLogo size={20} />
           </View>
