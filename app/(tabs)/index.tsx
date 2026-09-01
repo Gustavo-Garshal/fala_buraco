@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
 
   titulo: {
     color: cores.preto,
-    fontSize: 26,
+    fontSize: 27,
     fontWeight: 'bold',
     textAlign: 'center',
     margin: 25,
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
 
   textoBotao: {
     color: 'white',
-    fontSize: 18, 
+    fontSize: 17, 
     fontWeight: 'bold',
 
   },
