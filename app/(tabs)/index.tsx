@@ -1,19 +1,9 @@
 import GoogleLogo from '@/components/google_logo';
+import { cores } from '@/constants/cores';
 import { Link, router } from "expo-router";
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-
-//Paleta de cores do projeto
-const cores = {
-  verde: '#108245', 
-  verdeEscuro: '#0c6b38',
-  cinzaClaro: '#8a93a1',
-  cinzaEscuro: '#5b6472',
-  preto: '#161a20',
-  bgBrancoGelo: '#f6f8fa',
-  branco: '#ffffff',
-};
 
 export default function HomeScreen() {
 const loginGoogle = () => {
