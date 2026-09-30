@@ -1,4 +1,4 @@
-import { cores } from '@/constants/cores';
+  import { cores } from '@/constants/cores';
 import { router, useLocalSearchParams } from "expo-router";
 import { useState } from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
